@@ -4,7 +4,6 @@ const ValidationError = require(`../helpers/ValidationError.js`);
 
 const calculateAge = async (req, res) => {
   try {
-
     const dob = req.query.dob;
     if (!dob) throw new ValidationError(`Please pass dob has query parameter`);
     
@@ -18,7 +17,7 @@ const calculateAge = async (req, res) => {
       return response.BadRequestResponse(res, error.message);
     return response.ServerError(res, error);
   }
-}
+};
 
 module.exports = {
   calculateAge,
