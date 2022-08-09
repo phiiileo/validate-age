@@ -26,8 +26,7 @@ const rateLimit = async (req, res, next) => {
       : next();
   } catch (error) {
     return response.ServerError(res, error);
-  }
-}
+  }}
 
 module.exports = {
   rateLimit,

@@ -1,7 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const routes = require('./routes/index.js');
+const express = require(`express`);
+const bodyParser = require(`body-parser`);
+const cors = require(`cors`);
+const routes = require(`./routes/index.js`);
 
 //create instance of an express server
 const app = express();
@@ -18,7 +18,7 @@ app.use(
 
 // set the response content type to a json data format
 app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader(`Content-Type`, `application/json`);
   next();
 });
 

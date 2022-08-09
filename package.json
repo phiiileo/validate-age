@@ -7,7 +7,6 @@
   "author": "Emmanuel Owojori <emmanuelboluwajib1@gmail.com>",
   "license": "MIT",
   "private": false,
-  "type": "module",
   "scripts": {
     "start:dev": "nodemon index.js",
     "start": "node index.js",

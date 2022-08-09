@@ -5,9 +5,8 @@ const indexRoute = async (req, res) => {
   return response.SuccessResponse(
     res,
     `Calculate age app service is running successfully. visit /howold to calculate age`,
-    {},
-  );
-}
+    {}
+  )}
 
 module.exports = {
   indexRoute,

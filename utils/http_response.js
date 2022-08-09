@@ -1,17 +1,17 @@
 // format http success response
-const SuccessResponse = (res, message, data) => {
+const SuccessResponse = (res, message) => {
   res.statusCode = 200;
   res.end(JSON.stringify(message));
 }
 
 // format http bad request response
-const BadRequestResponse = (res, message, errors = {}) => {
+const BadRequestResponse = (res, message) => {
   res.statusCode = 400;
   res.end(JSON.stringify(message));
 }
 
 // format http too many request response
-const TooManyRequestResponse = (res, timeleft, errors = {}) => {
+const TooManyRequestResponse = (res, timeleft) => {
   res.statusCode = 429;
   res.end(
     `Too many request please wait for ${timeleft} milliseconds to try again`
