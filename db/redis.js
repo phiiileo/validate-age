@@ -1,5 +1,5 @@
-const Redis = require('ioredis')
-const config = require('../config/index.js')
+const Redis = require(`ioredis`);
+const config = require(`../config/index.js`);
 
 // const redis = new Redis();
 const redis = new Redis({
@@ -7,4 +7,4 @@ const redis = new Redis({
   port: config.REDIS_PORT,
   password: config.REDIS_PASSWORD,
 })
-export default redis
+module.exports = redis;
