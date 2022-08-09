@@ -6,10 +6,8 @@ const calculateAge = async (req, res) => {
   try {
     const dob = req.query.dob;
     if (!dob) throw new ValidationError(`Please pass dob has query parameter`);
-    
     // calculate age from query
     const age = age_service.calaculateAge(dob);
-
     // send response
     response.SuccessResponse(res, age);
   } catch (error) {
