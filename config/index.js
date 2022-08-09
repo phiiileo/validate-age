@@ -3,11 +3,12 @@ dotenv.config();
 
 // aggregate app configs
 const config = {
-    REDISHOST: process.env.REDISHOST,
-    REDISPORT: process.env.REDISPORT,
-    REDISPASSWORD: process.env.REDISPASSWORD,
-    NUMBEROFALLOWEDREQUEST: process.env.NUMBEROFALLOWEDREQUEST || 3,
-    TIMELIMIT: process.env.TIMELIMIT || 1
+    REDIS_HOST: process.env.REDIS_HOST,
+    REDIS_URL: process.env.REDIS_URL,
+    REDIS_PORT: process.env.REDIS_PORT,
+    REDIS_PASSWORD: process.env.REDIS_PASSWORD,
+    NUMBER_OF_ALLOWED_REQUEST: process.env.NUMBER_OF_ALLOWED_REQUEST || 3,
+    TIME_LIMIT: process.env.TIME_LIMIT || 1
 }
 console.log(config)
 export default config;
