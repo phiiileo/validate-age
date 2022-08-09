@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: "*",
-  }),
+  })
 );
 
 // set the response content type to a json data format

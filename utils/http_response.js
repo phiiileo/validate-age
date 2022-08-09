@@ -2,7 +2,7 @@
 const SuccessResponse = (res, message) => {
   res.statusCode = 200;
   res.end(JSON.stringify(message));
-}
+};
 
 // format http bad request response
 const BadRequestResponse = (res, message) => {

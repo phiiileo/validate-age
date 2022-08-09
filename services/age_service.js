@@ -27,7 +27,6 @@ const calaculateAge = (dob) => {
   //get and return the year difference (age)
   return Math.abs(ageyear - 1970);
 }
-
 module.exports = {
   calaculateAge,
 }
