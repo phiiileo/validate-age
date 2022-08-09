@@ -1,5 +1,5 @@
-const dotenv = require('dotenv')
-dotenv.config()
+const dotenv = require(`dotenv`);
+dotenv.config();
 
 // aggregate app configs
 const config = {
@@ -11,4 +11,4 @@ const config = {
   TIME_LIMIT: process.env.TIME_LIMIT || 1,
 }
 
-export default config
+module.exports = config;
