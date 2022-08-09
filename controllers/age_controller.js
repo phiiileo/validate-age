@@ -5,14 +5,14 @@ const ValidationError = require(`../helpers/ValidationError.js`);
 const calculateAge = async (req, res) => {
   try {
 
-    const dob = req.query.dob
-    if (!dob) throw new ValidationError(`Please pass dob has query parameter`)
+    const dob = req.query.dob;
+    if (!dob) throw new ValidationError(`Please pass dob has query parameter`);
     
     // calculate age from query
-    const age = age_service.calaculateAge(dob)
+    const age = age_service.calaculateAge(dob);
 
     // send response
-    response.SuccessResponse(res, age)
+    response.SuccessResponse(res, age);
   } catch (error) {
     if(error instanceof ValidationError) return response.BadRequestResponse(res, error.message);
     return response.ServerError(res, error);

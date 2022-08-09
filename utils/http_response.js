@@ -8,7 +8,7 @@ const SuccessResponse = (res, message) => {
 const BadRequestResponse = (res, message) => {
   res.statusCode = 400;
   res.end(JSON.stringify(message));
-}
+};
 
 // format http too many request response
 const TooManyRequestResponse = (res, timeleft) => {
@@ -16,7 +16,7 @@ const TooManyRequestResponse = (res, timeleft) => {
   res.end(
     `Too many request please wait for ${timeleft} milliseconds to try again`
   );
-}
+};
 
 // format http server error response
 const ServerError = (res, error, message) => {
@@ -26,7 +26,7 @@ const ServerError = (res, error, message) => {
     message ||
       `Server error. Something unexpected happened please contact support!`
   );
-}
+};
 
 module.exports = {
   SuccessResponse,
