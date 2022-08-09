@@ -10,5 +10,5 @@ const config = {
     NUMBER_OF_ALLOWED_REQUEST: process.env.NUMBER_OF_ALLOWED_REQUEST || 3,
     TIME_LIMIT: process.env.TIME_LIMIT || 1
 }
-console.log(config)
+
 export default config;

@@ -1,4 +1,4 @@
-import response from '../utils/http_response.js';
+const response = require('../utils/http_response.js');
 
 // Returns welcome  message when client hits the base url
 const indexRoute = async (req, res) => {
@@ -10,5 +10,5 @@ const indexRoute = async (req, res) => {
 }
 
 export default {
-    indexRoute
+    indexRoute,
 }
