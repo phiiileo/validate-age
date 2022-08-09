@@ -8,8 +8,13 @@ const calaculateAge = (dob) => {
   let dobformated = new Date(dob);
   //check if dob passed is string date format
   if (dobformated == `Invalid Date`) {
+    // convert dob to number
+    const dobinnumber = Number(dob);
+    // check if number is less than 0
+    if(dobinnumber < 1) 
+      throw new ValidationError(`dob cannot be lesser than 1`); 
     // try pass dob if it's the number(milliseconds) format
-    dobformated = new Date(Number(dob));
+    dobformated = new Date(dobinnumber);
     // return error is dob passed is invalid
     if (dobformated == `Invalid Date`)
       throw new ValidationError(`Please pass a valid date to continue`);
