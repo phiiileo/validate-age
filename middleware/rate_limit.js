@@ -10,11 +10,11 @@ const rateLimit = async (req, res, next) => {
         const iprequest = await redis.incr(ipaddress);
         let ttl;
         // get the number of allowed requests
-        const numberofrequest = config.NUMBEROFALLOWEDREQUEST;
+        const numberofrequest = config.NUMBER_OF_ALLOWED_REQUEST;
         // check if it's client first request then set the expiry
         if (iprequest === 1) {
             // get the time limit for number of request
-            const timeframe = config.TIMELIMIT;
+            const timeframe = config.TIME_LIMIT;
             // set the expiry time for client
             await redis.expire(ipaddress, timeframe);
             ttl = timeframe;
