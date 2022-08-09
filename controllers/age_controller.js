@@ -19,4 +19,4 @@ const calculateAge = async (req, res) => {
 
 module.exports = {
   calculateAge,
-}
+};
