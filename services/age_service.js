@@ -11,7 +11,7 @@ const calaculateAge = (dob) => {
     // convert dob to number
     const dobinnumber = Number(dob);
     // check if number is less than 0
-    if (dobinnumber < 1) 
+    if (dobinnumber < 1)
     throw new ValidationError(`dob cannot be lesser than 1`);
     // try pass dob if it's the number(milliseconds) format
     dobformated = new Date(dobinnumber);
