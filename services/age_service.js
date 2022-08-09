@@ -11,26 +11,31 @@ const calaculateAge = (dob) => {
     // convert dob to number
     const dobinnumber = Number(dob);
     // check if number is less than 0
-    if (dobinnumber < 1) throw new ValidationError(`dob cannot be lesser than 1`);
+    if (dobinnumber < 1)
+      throw new ValidationError(`dob cannot be lesser than 1`);
     // try pass dob if it's the number(milliseconds) format
     dobformated = new Date(dobinnumber);
     // return error is dob passed is invalid
     if (dobformated == `Invalid Date`)
       throw new ValidationError(`Please pass a valid date to continue`);
   }
-  //get the time difference
-  const timedifference = Date.now() - dobformated;
-  if (timedifference < 0)
+  const year = computeAgeHandler(dobformated);
+  if (year < 0)
     throw new ValidationError(
       `Your date of birth cannot be greater than the current year`
     );
-  //get the time difference date
-  const differencedate = new Date(timedifference);
-  //get age year
-  const ageyear = differencedate.getUTCFullYear();
-  //get and return the year difference (age)
-  return Math.abs(ageyear - 1970);
-};
+  return year;
+}
+
+const computeAgeHandler = (birthDate) => {
+  var today = new Date()
+  var age = today.getFullYear() - birthDate.getFullYear()
+  var m = today.getMonth() - birthDate.getMonth()
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--
+  }
+  return age
+}
 module.exports = {
   calaculateAge,
-};
+}
