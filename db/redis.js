@@ -1,5 +1,5 @@
-import Redis from "ioredis";
-import config from "../config/index.js";
+const Redis = require("ioredis");
+const config = require("../config/index.js");
 
 // const redis = new Redis();
 const redis = new Redis({
