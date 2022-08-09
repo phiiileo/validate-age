@@ -25,4 +25,5 @@ const rateLimit = async (req, res, next) => {
     : next();
 };
 module.exports = {
-  rateLimit,}
+  rateLimit,
+};
