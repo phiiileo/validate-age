@@ -14,9 +14,10 @@ const calculateAge = async (req, res) => {
     // send response
     response.SuccessResponse(res, age);
   } catch (error) {
-    if(error instanceof ValidationError) return response.BadRequestResponse(res, error.message);
+    if( error instanceof ValidationError) 
+      return response.BadRequestResponse(res, error.message);
     return response.ServerError(res, error);
-  }
+}
 }
 
 module.exports = {

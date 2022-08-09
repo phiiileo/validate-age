@@ -33,4 +33,4 @@ module.exports = {
   BadRequestResponse,
   ServerError,
   TooManyRequestResponse,
-}
+};

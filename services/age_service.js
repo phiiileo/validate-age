@@ -25,7 +25,7 @@ const calaculateAge = (dob) => {
   //get age year
   const ageyear = differencedate.getUTCFullYear();
   //get and return the year difference (age)
-  return Math.abs(ageyear - 1970);}
+  return Math.abs(ageyear - 1970);
+};
 module.exports = {
-  calaculateAge,
-}
+  calaculateAge,}
