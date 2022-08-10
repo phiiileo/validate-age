@@ -5,8 +5,8 @@ const SuccessResponse = (res, message) => {
 };
 
 // format http bad request response
-const BadRequestResponse = (res, message) => {
-  res.statusCode = 400;
+const BadRequestResponse = (res, message, statuscode = 400) => {
+  res.statusCode = statuscode;
   res.end(JSON.stringify(message));
 };
 
