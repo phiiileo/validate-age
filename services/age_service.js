@@ -53,7 +53,7 @@ function getAge(birthDate) {
     var daysInYear = isLeap(y) ? 366 : 365
     if (days >= daysInYear) {
       days -= daysInYear
-      age++
+      age++;
       // increment the age only if there are available enough days for the year.
     }
   }
