@@ -16,20 +16,28 @@ The age is calculated using a simple O(1) time complexity algorithm and handles 
 
 The service is deployed on heroku as it is a free and fast hosting platform and won't impact on cost of deployment.
 
-## How does this work?
+## How does this work
 
 The service provides a communication via HTTP requests by calling an endpoint which calculate and returns the age from the date of birth (dob) passed.
 
 The base url is `https://philage-service.herokuapp.com`
+
 Path `GET /howorld`
+
 Query parameter `dob`
 
 The endpoint returns status codes
+
 `200` for a successful request
+
 `422` for passing null or undefined as dob value
+
 `429` for too many requests
+
 `400` for an invalid dob or a bad request
+
 `500` for an unexpected error
+
 `404` for an endpoint that does not exist on the server
 
 ### Usage example
@@ -47,5 +55,5 @@ The endpoint returns status codes
           .catch(error => console.log('error', error));
       }
 
-      const age = calculateAge('436504400000') // returns 38
+      const age = calculateAge('436504400000'); // returns 38
 ```

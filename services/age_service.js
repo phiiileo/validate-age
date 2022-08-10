@@ -33,13 +33,13 @@ const calaculateAge = (dob) => {
 
 // compute age from dob
 const computeAge = (dob, now) => {
-    let age = now.getFullYear() - dob.getFullYear();
-    const month = now.getMonth() - dob.getMonth();
-    if (month < 0 || (month === 0 && now.getDate() < dob.getDate())) 
-    {
-        age--;
-    }
-    return age;
+  let age = now.getFullYear() - dob.getFullYear();
+  const month = now.getMonth() - dob.getMonth();
+  if (month < 0 || (month === 0 && now.getDate() < dob.getDate()))
+  {
+    age--;
+  }
+  return age;
 }
 module.exports = {
   calaculateAge,
