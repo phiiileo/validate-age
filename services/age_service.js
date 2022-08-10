@@ -19,19 +19,28 @@ const calaculateAge = (dob) => {
     if (dobformated == `Invalid Date`)
       throw new ValidationError(`Please pass a valid date to continue`);
   }
+  const today = new Date();
   //get the time difference
-  const timedifference = Date.now() - dobformated;
+  const timedifference = today - dobformated;
   if (timedifference < 0)
     throw new ValidationError(
       `Your date of birth cannot be greater than the current year`
     );
-  //get the time difference date
-  const differencedate = new Date(timedifference);
-  //get age year
-  const ageyear = differencedate.getUTCFullYear();
-  //get and return the year difference (age)
-  return Math.abs(ageyear - 1970);
+  // get age
+  const age = computeAge(dobformated, today);
+  return age;
 };
+
+// compute age from dob
+const computeAge = (dob, now) => {
+    let age = now.getFullYear() - dob.getFullYear();
+    const month = now.getMonth() - dob.getMonth();
+    if (month < 0 || (month === 0 && now.getDate() < dob.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
 module.exports = {
   calaculateAge,
 };
