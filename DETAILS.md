@@ -1,5 +1,7 @@
 # Validate Age Service
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2b697faf8d5242e4ab750b3d091568a9)](https://app.codacy.com/gh/phiiileo/validate-age?utm_source=github.com&utm_medium=referral&utm_content=phiiileo/validate-age&utm_campaign=Badge_Grade_Settings) [![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
+
 Validate age is a software service that calculates age from date of birth (dob) sent to the server. It calculates the age and returns the value in years.
 
 The codebase is structured such that there is separation of concerns. It makes it easy to point to which folder is doing what by mere looking at the folder name. Adding new features or modifying existing features within the codebase becomes easier. It also helps with unit testing as the system is broken down into simpler units.
@@ -41,6 +43,7 @@ The endpoint returns status codes
 `404` for an endpoint that does not exist on the server
 
 ### Usage example
+#### Javascript
 ```js
   
       function calculateAge(dob){
@@ -55,5 +58,57 @@ The endpoint returns status codes
           .catch(error => console.log('error', error));
       }
 
-      const age = calculateAge('436504400000'); // returns 38
 ```
+#### NodeJs
+```js
+      var axios = require('axios');
+
+      var config = {
+          method: 'get',
+          url: 'https://philage-service.herokuapp.com/howold?dob=2011-08-11',
+          headers: { }
+          };
+
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+```
+
+#### Java
+```Java
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
+        Request request = new Request.Builder()
+                          .url("https://philage-service.herokuapp.com/howold?dob=2011-08-11")
+                          .method("GET", body)
+                          .build();
+        Response response = client.newCall(request).execute();
+
+```
+
+#### Curl
+```Curl
+        curl --location --request GET 'https://philage-service.herokuapp.com/howold?dob=2011-08-11'
+```
+
+#### C#
+``` c#
+        var client = new RestClient("https://philage-service.herokuapp.com/howold?dob=2011-08-11");
+        client.Timeout = -1;
+        var request = new RestRequest(Method.GET);
+        IRestResponse response = client.Execute(request);
+        Console.WriteLine(response.Content);
+
+```
+
+### License
+
+Copyright (c) 2022 ThankGod George
+Licensed under the MIT license.
