@@ -1,7 +1,7 @@
 // format http success response
 const SuccessResponse = (res, message) => {
   res.statusCode = 200;
-  res.end(JSON.stringify({age:message, data:message}));
+  res.end(JSON.stringify({ age:message, data:message }));
 };
 
 // format http bad request response
