@@ -16,12 +16,12 @@ const rateLimit = async (req, res, next) => {
     //get the time limit for number of request
     const timeframe = config.TIME_LIMIT;
     //set the expiry time for client
-    await redis.expire(ipaddress, timeframe);
+    redis.expire(ipaddress, timeframe);
     ttl = timeframe;
-  } else ttl = await redis.ttl(ipaddress);
+  } //else ttl = await redis.ttl(ipaddress);
   //check if number of request is greater than allowed number, if yes return error
   return iprequest > numberofrequest
-    ? response.TooManyRequestResponse(res, ttl)
+    ? response.TooManyRequestResponse(res, ttl || 1)
     : next();
 };
 module.exports = {
