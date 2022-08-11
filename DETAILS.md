@@ -41,9 +41,25 @@ The endpoint returns status codes
 `404` for an endpoint that does not exist on the server
 
 ### Usage example
-```go
+```js
   
       function calculateAge(dob){
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+
+        fetch("https://philage-service.herokuapp.com/howold?dob={dob}", requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+      }
+
+      const age = calculateAge('436504400000'); // returns 38
+
+    go 
+
+       function calculateAge(dob){
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
