@@ -110,5 +110,5 @@ The endpoint returns status codes
 
 ### License
 
-Copyright (c) 2022 ThankGod George
+Copyright (c) 2022 Emmanuel Owojori
 Licensed under the MIT license.
