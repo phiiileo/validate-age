@@ -4,13 +4,13 @@ Validate age is a software service that calculates age from date of birth (dob) 
 
 The codebase is structured such that there is separation of concerns. It makes it easy to point to which folder is doing what by mere looking at the folder name. Adding new features or modifying existing features within the codebase becomes easier. It also helps with unit testing as the system is broken down into simpler units.
 
-Redis is used as the data store because it's one of the simplest and fastest key-value database for reading and writing data. it supports low lentency and process a high throughput which allows a lot of requests within a small time. Redis is used for handling the rate limit as it's fast.
+Redis is used as the data store because it's one of the simplest and fastest key-value database for reading and writing data. it supports low latency and process a high throughput which allows a lot of requests within a small time. Redis is used for handling the rate limit as it's fast.
 
-The rate limit algorithm is placed in a middleware so that it can support multiple endpoints with a single implementation and separation of concern.
+The rate limit algorithm is placed as middleware so that it can support multiple endpoints with a single implementation and separation of concern.
 
-The rate limit configs (such as the number of calls, and time frame for the limit) is parameterizable and these paremeters are externalized such that the values can be changed without having to redeploy the service for just that single change.
+All system configs (such as the redis connection details, the number of calls, and time frame for the limit) are externalized such that the values can be changed without having to redeploy the service for just that single change.
 
-Fewer external packages were used so as to have full control over the implementation of the system and able to modify system behaviour as required.
+Fewer external packages were used so as to reduce depencies on the packages and also have full control over the implementation of the system and able to modify system behaviour as required.
 
 The age is calculated using a simple O(1) time complexity algorithm and handles number of edge cases such as calculating the age when the current date is the date of birth, also put into account leap years for getting accurate age.
 
