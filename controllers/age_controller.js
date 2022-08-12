@@ -6,8 +6,8 @@ const calculateAge = async (req, res) => {
   try {
     const dob = req.query.dob;
     if (dob == `undefined`)
-      throw new ValidationError(`dob cannot be undefined`, 422);
-    if (dob == "null") throw new ValidationError(`dob cannot be null`, 422);
+      return response.SuccessResponse(res, undefined);
+    if (dob == "null") return response.SuccessResponse(res,null);
     if (!dob) throw new ValidationError(`Please pass dob has query parameter`);
     // calculate age from query
     const age = age_service.calaculateAge(dob);
