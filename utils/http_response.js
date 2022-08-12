@@ -8,7 +8,7 @@ const SuccessResponse = (res, message) => {
 const BadRequestResponse = (res, message, statuscode = 400) => {
   res.statusCode = statuscode || 400;
   res.end(JSON.stringify({ error: message }));
-}
+};
 
 // format http too many request response
 const TooManyRequestResponse = (res, timeleft) => {
@@ -29,7 +29,7 @@ const ServerError = (res, error, message) => {
       error:
         message ||
         `Server error. Something unexpected happened please contact support!`,
-    }),
+    })
   );
 }
 
