@@ -2,7 +2,7 @@
 const SuccessResponse = (res, message) => {
   res.statusCode = 200;
   res.end(JSON.stringify({ age: message }));
-}
+};
 
 // format http bad request response
 const BadRequestResponse = (res, message, statuscode = 400) => {
@@ -16,7 +16,7 @@ const TooManyRequestResponse = (res, timeleft) => {
   res.end(
     JSON.stringify({
       error: `Too many request please wait for ${timeleft} milliseconds to try again`,
-    }),
+    })
   );
 }
 
