@@ -11,8 +11,10 @@ const BadRequestResponse = (res, message, statuscode = 400) => {
 };
 
 // format http too many request response
-const TooManyRequestResponse = (res, timeleft) => {
+const TooManyRequestResponse = (res, timeleft, requestleft) => {
   res.statusCode = 429;
+  res.set(`x-ratelimit-limit`, timeleft);
+  res.set(`x-ratelimit-remaining`, requestleft);
   res.end(
     JSON.stringify({
       error: `Too many request please wait for ${timeleft} milliseconds to try again`,
