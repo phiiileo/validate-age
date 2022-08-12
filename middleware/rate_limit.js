@@ -22,9 +22,9 @@ const rateLimit = async (req, res, next) => {
   //check if number of request is greater than allowed number, if yes return error
   return iprequest > numberofrequest
     ? response.TooManyRequestResponse(
-      res,
-      ttl || 1,
-      numberofrequest - ipaddress
+        res,
+        ttl || 1,
+        numberofrequest - ipaddress
       )
     : next();
 };
