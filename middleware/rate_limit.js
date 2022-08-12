@@ -21,7 +21,11 @@ const rateLimit = async (req, res, next) => {
   } //else ttl = await redis.ttl(ipaddress);
   //check if number of request is greater than allowed number, if yes return error
   return iprequest > numberofrequest
-    ? response.TooManyRequestResponse(res, ttl || 1, numberofrequest - ipaddress)
+    ? response.TooManyRequestResponse(
+      res,
+      ttl || 1,
+      numberofrequest - ipaddress
+      )
     : next();
 };
 module.exports = {
