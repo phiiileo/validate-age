@@ -32,8 +32,6 @@ The endpoint returns status codes
 
 `200` for a successful request
 
-`422` for passing null or undefined as dob value
-
 `429` for too many requests
 
 `400` for an invalid dob or a bad request
