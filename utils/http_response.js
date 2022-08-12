@@ -18,7 +18,7 @@ const TooManyRequestResponse = (res, timeleft) => {
       error: `Too many request please wait for ${timeleft} milliseconds to try again`,
     })
   );
-}
+};
 
 // format http server error response
 const ServerError = (res, error, message) => {
@@ -31,7 +31,7 @@ const ServerError = (res, error, message) => {
         `Server error. Something unexpected happened please contact support!`,
     })
   );
-}
+};
 
 module.exports = {
   SuccessResponse,
